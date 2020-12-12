@@ -18,6 +18,9 @@ jobs:
         with:
           images: ghcr.io/${{ github.repository }}
           tag-sha: true
+          tag-semver: |
+            {{version}}
+            {{major}}.{{minor}}.{{patch}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
