@@ -1,5 +1,3 @@
-import ContainerStateButton from './ContainerStateButton'
-
 function ContainersListItem(props) {
   let url;
 
@@ -20,9 +18,6 @@ function ContainersListItem(props) {
         {url ? <a href={url}>{url}</a> : <p>Not available</p>}
       </td>
       <td>{props.container.State}</td>
-      <td>
-        <ContainerStateButton />
-      </td>
     </tr>
   );
 }

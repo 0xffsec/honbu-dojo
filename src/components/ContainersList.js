@@ -9,7 +9,6 @@ function ContainersList(props) {
         <td>Application</td>
         <td>URL</td>
         <td>State</td>
-        <td>Actions</td>
       </tr>
     </thead>
     <tbody className="text-sm">
