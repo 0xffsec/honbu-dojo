@@ -12,6 +12,13 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
       -
+        name: Docker meta
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v1
+        with:
+          images: ${{ github.repository }}
+          tag-sha: true
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       -
@@ -28,7 +35,5 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          push: true
-          tags: |
-            ghcr.io/0xffsec/honbu-dojo:latest
-            ghcr.io/0xffsec/honbu-dojo:$GITHUB_SHA
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
