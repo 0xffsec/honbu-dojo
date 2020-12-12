@@ -12,6 +12,15 @@ Docker API Socket (`/var/run/docker.sock`) must be mounted.
 docker run -d -p 80:8080 -v /var/run/docker.sock:/var/run/docker.sock
 ```
 
+```yaml
+0xffsec-honbu-dojo :
+  image: ghcr.io/0xffsec/honbu-dojo
+  ports:
+    - "80:8080"
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+```
+
 ## Getting Started
 
 - Install dependencies.
