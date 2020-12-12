@@ -9,7 +9,7 @@ This applications is the SPA to manage applications inside dojo labs.
 Docker API Socket (`/var/run/docker.sock`) must be mounted.
 
 ```sh
-docker run -d -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock
+docker run -d -p 80:8080 -v /var/run/docker.sock:/var/run/docker.sock
 ```
 
 ## Getting Started
