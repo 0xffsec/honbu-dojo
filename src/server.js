@@ -31,7 +31,7 @@ io.sockets.on('connection', (socket) => {
 
   setInterval(() => {
     getContainersAndEmit(socket)
-  }, 100);
+  }, 3000);
 
   socket.on("list", (data) => getContainersAndEmit(socket));
   socket.on("disconnect", () => console.log("Client disconnected"));
