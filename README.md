@@ -9,7 +9,7 @@ This applications is the SPA to manage applications inside dojo labs.
 Docker API Socket (`/var/run/docker.sock`) must be mounted.
 
 ```sh
-docker run -d -p 80:8080 -v /var/run/docker.sock:/var/run/docker.sock
+docker run -d -p 80:8080 -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/0xffsec/honbu-dojo
 ```
 
 ```yaml
@@ -32,7 +32,7 @@ npm install
 ## Development
 
 ```sh
-npm run dev
+npm run start:dev
 ```
 
 ## Production
@@ -40,6 +40,5 @@ npm run dev
 In `production`. Both, client and server, will be bundled and server by the Node application.
 
 ```sh
-npm build
-npm start
+npm run start:prod
 ```
