@@ -1,10 +1,13 @@
 FROM node:15.4-alpine3.10
 MAINTAINER Max Rodrigo "contact@maxrodrigo.com"
 WORKDIR /app
+
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install --silent
+
 COPY . ./
+RUN npm run client:prod
 
 EXPOSE 8080
-CMD ["npm", "start"]
+CMD ["npm", "run", "server:prod"]
