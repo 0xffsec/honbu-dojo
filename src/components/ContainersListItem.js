@@ -8,7 +8,7 @@ function ContainersListItem(props) {
 
   return (
     <tr className="hover:bg-gray-900">
-      <td>
+      <td className="p-3">
         <p className="capitalize">{name}</p>
         <div className="text-sm text-gray-400">
           {props.container.Image}

@@ -6,7 +6,7 @@ function ContainersList(props) {
     <table className="min-w-full">
     <thead className="text-xs uppercase tracking-wider text-gray-400 font-bold">
       <tr>
-        <td>Application</td>
+        <td className="p-3">Application</td>
         <td>URL</td>
         <td>State</td>
       </tr>
