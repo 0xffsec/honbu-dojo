@@ -1,11 +1,10 @@
 function ContainersListItem(props) {
-  let name = props.container.Names[0].slice(1).replace('-', ' ');
-  let url;
+  const name = props.container.Names[0].slice(1).replace(('-','_'), ' ');
+  const url = window.location.protocol + '//' + window.location.hostname;
+  let uris;
 
-  if (props.container.Ports[0] && props.container.Ports[0].PublicPort !== undefined) {
-    const port = props.container.Ports[0].PublicPort;
-    url = window.location.protocol + '//' + window.location.hostname + ':' + port;
-  }
+  if (props.container.Ports.length > 0)
+    uris = props.container.Ports.map(e => `${url}:${e.PublicPort}`);
 
   return (
     <tr className="hover:bg-gray-900">
@@ -16,7 +15,11 @@ function ContainersListItem(props) {
         </div>
       </td>
       <td>
-        {url ? <a href={url}>{url}</a> : <p>Not available</p>}
+        {typeof(uris) == undefined ?
+          <p>Not available</p>
+        :
+          uris.sort().map(u => <a className="block" href={u}>{u}</a>)
+        }
       </td>
       <td>{props.container.State}</td>
     </tr>
