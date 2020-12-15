@@ -1,10 +1,10 @@
 function ContainersListItem(props) {
-  const name = props.container.Names[0].slice(1).replace(('-','_'), ' ');
+  const name = props.container.Names[0].slice(1).replace(/[-_]/g, ' ');
   const url = window.location.protocol + '//' + window.location.hostname;
   let uris;
 
   if (props.container.Ports.length > 0)
-    uris = props.container.Ports.map(e => `${url}:${e.PublicPort}`);
+    uris = props.container.Ports.map(e => e.PublicPort ? `${url}:${e.PublicPort}`:null);
 
   return (
     <tr className="hover:bg-gray-900">
