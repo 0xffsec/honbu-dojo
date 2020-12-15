@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import socketClient from "socket.io-client";
 import ContainersList from './ContainersList'
 
+const socket_port = process.env.REACT_APP_SOCKET_PORT || 8080;
 const url = window.location.protocol + '//' + window.location.hostname;
-const socket = socketClient(url+':8080')
+const socket = socketClient(`${url}:${socket_port}`);
 
 function Containers() {
   const [containers, setContainers] = useState([]);

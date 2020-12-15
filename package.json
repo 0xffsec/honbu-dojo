@@ -13,8 +13,8 @@
     "client:prod": "craco build",
     "server:dev": "nodemon src/server.js",
     "server:prod": "node src/server.js",
-    "start:dev": "NODE_ENV=development concurrently \"npm run client:dev\" \"npm run server:dev\"",
-    "start:prod": "NODE_ENV=production npm run client:prod && npm run server:prod"
+    "start:dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
+    "start:prod": "npm run client:prod && npm run server:prod"
   },
   "eslintConfig": {
     "extends": [
