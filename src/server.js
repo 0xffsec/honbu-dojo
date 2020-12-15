@@ -21,7 +21,13 @@ app.get('/healthcheck', (req, res) => {
 });
 
 const getContainersAndEmit = socket => {
-  docker.listContainers({ all: true}, (err, containers) => {
+  const opt = {
+    "filters": {
+      "label": ["webapp"]
+    }
+  }
+
+  docker.listContainers(opt, (err, containers) => {
     socket.emit('containers', containers);
   });
 };
