@@ -2,11 +2,13 @@
 
 ## Introduction
 
-This applications is the SPA to manage applications inside dojo labs.
+This webapp is ment to be used within the [WebDojo](https://github.com/0xffsec/webdojo).
 
 ## Requirements
 
 Docker API Socket (`/var/run/docker.sock`) must be mounted.
+
+## Run it!
 
 ```sh
 docker run -d -p 80:8080 -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/0xffsec/honbu-dojo
@@ -21,7 +23,7 @@ docker run -d -p 80:8080 -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/0x
     - /var/run/docker.sock:/var/run/docker.sock
 ```
 
-## Getting Started
+## Development
 
 - Install dependencies.
 
